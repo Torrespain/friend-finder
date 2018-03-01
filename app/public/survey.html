@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friend Finder!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Survey Questions</h1> 
+	  		<p>Answer some questions to meet your perfect match!</p>
+	  		<div id="actualTime"></div>
+		</div>
+		 
+	    <div class="panel-body">
+		    <form>
+		      <div class="form-group">
+		      	<label for="name-input">Name (Required)</label>
+		        <input class="form-control" id="name-input" type="text">
+		      </div>
+		      <div class="form-group">
+		      	<label for="taste-input">Name (Required)</label>
+		        <input class="form-control" id="taste-input" type="text">
+		      </div>
+		      <div class="form-group">
+		      	<lablel for="image-input">Photo URL (Required)</label>
+		        <input class="form-control" id="photo-input" type="text">
+		      </div>
+		    </form>
+		</div>
+
+      <h3>Question 1</h3>
+      <h4>Description...</h4>                   
+	  
+	    <select>
+		  <option id="q-1" value="1">1 (Strongly Disagree)</option>
+		  <option id="q-2" value="2">2</option>
+		  <option id="q-3" value="3">3</option>
+		  <option id="q-4" value="4">4</option>
+		  <option id="q-5" value="5">5 (Strongly Disagree)</option>
+		</select>
+	 
+  		<button type="button" id="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+	</div>
+	
+
+</body>
+</html>
+
+<script type="text/javascript">
+var newFriend={};
+
+$("#submit").on("click", function(event){
+	event.preventDefault();
+
+	newFriend.name = $("#name-input").val().trim();
+	newFriend.taste = $("#taste-input").val().trim();
+	newFriend.image = $("#photo-input").val().trim();
+	
+
+	for(var i = 1;i<10; i++){
+		console.log($("#q-"+i))
+		var scoreVal = $("#q-"+i).value;
+		newFriend.score.push(scoreVal);
+	}
+
+	//sendData()
+})
+
+console.log(newFriend);
+
+function sendData(){
+	$.post( "/api/new",newFriend,  function( match ) {
+	  console.log(match)
+	  // ceate
+	  createModal(match)
+	});
+
+	function createModal(match){
+
+	}
+}
+
+</script>
