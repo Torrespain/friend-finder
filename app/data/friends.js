@@ -6,7 +6,7 @@ var people = [
 		taste: "I like selfies"
 	},{
 		name: "Princess Mondanga",
-		photo: "https://media.giphy.com/media/jLoWs7PRHHCPm/giphy.gif",
+		photo: "https://media2.giphy.com/media/jLoWs7PRHHCPm/giphy.gif?cid=e1bb72ff5a98f342644e31466fe4bb6e",
 		"score[]": [4,3,3,1,1],
 		taste: "Oh you are a lucky one..."
 	},{
