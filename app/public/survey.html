@@ -43,15 +43,92 @@
       <h3>Question 1</h3>
       <h4>Description...</h4>                   
 	  
-	    <select>
-		  <option id="q-1" value="1">1 (Strongly Disagree)</option>
-		  <option id="q-2" value="2">2</option>
-		  <option id="q-3" value="3">3</option>
-		  <option id="q-4" value="4">4</option>
-		  <option id="q-5" value="5">5 (Strongly Disagree)</option>
+	  <div>
+	    <select id="q-1">
+	      <option value="default">Choose an option</option>
+		  <option value="1">1 (Strongly Disagree)</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5 (Strongly Disagree)</option>
 		</select>
-	 
-  		<button type="button" id="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+	  </div>
+	  <br>
+	
+	   <div>
+	    <select id="q-2">
+	      <option value="default">Choose an option</option>
+		  <option value="1">1 (Strongly Disagree)</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5 (Strongly Disagree)</option>
+		</select>
+	  </div>
+	  <br>
+
+	   <div>
+	    <select id="q-3">
+	      <option value="default">Choose an option</option>
+		  <option value="1">1 (Strongly Disagree)</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5 (Strongly Disagree)</option>
+		</select>
+	  </div>
+	  <br>
+
+	   <div>
+	    <select id="q-4">
+	      <option value="default">Choose an option</option>
+		  <option value="1">1 (Strongly Disagree)</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5 (Strongly Disagree)</option>
+		</select>
+	  </div>
+	  <br>
+
+	   <div>
+	    <select id="q-5">
+	      <option value="default">Choose an option</option>
+		  <option value="1">1 (Strongly Disagree)</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5 (Strongly Disagree)</option>
+		</select>
+	  </div>
+	  <br>
+
+  		<button type="button" id="submit" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Your Match!</h4>
+        </div>
+        <div id="modal-name">
+        </div>
+        <div id="modal-photo">
+        </div>
+        <div id="modal-story">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
 
 	</div>
 	
@@ -60,7 +137,12 @@
 </html>
 
 <script type="text/javascript">
-var newFriend={};
+var newFriend={
+	name:"",
+	taste:"",
+	image:"",
+	score:[]
+};
 
 $("#submit").on("click", function(event){
 	event.preventDefault();
@@ -69,27 +151,38 @@ $("#submit").on("click", function(event){
 	newFriend.taste = $("#taste-input").val().trim();
 	newFriend.image = $("#photo-input").val().trim();
 	
-
-	for(var i = 1;i<10; i++){
-		console.log($("#q-"+i))
-		var scoreVal = $("#q-"+i).value;
+	for(var i = 1;i<6; i++){
+		var scoreVal = $("#q-"+i).val();
 		newFriend.score.push(scoreVal);
 	}
 
-	//sendData()
+	sendData();
 })
 
-console.log(newFriend);
+//console.log(newFriend);
 
 function sendData(){
-	$.post( "/api/new",newFriend,  function( match ) {
-	  console.log(match)
-	  // ceate
-	  createModal(match)
+	//console.log(newFriend)
+	$.post("/api/newfriend",newFriend,  function(match) {
+	 	console.log("match");
+	  createModal(match);
+
 	});
-
+// 
 	function createModal(match){
+		console.log(match.name);
+		var name=$("<h3>");
+		name.text(match.name);
+		$("#modal-name").html(name);
 
+		var picture=$("<img>");
+		picture.attr("width","400", "length","400")
+		picture.attr("src", match.photo);
+		$("#modal-photo").html(picture);
+
+		var taste=$("<p>");
+		taste.text(match.taste);
+		$("#modal-story").html(taste);
 	}
 }
 

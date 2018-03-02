@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.static('./app/public'));
 
 // ROUTER
-// require("./routing/apiRoutes")(app);
+require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
 app.listen(PORT, function() {
