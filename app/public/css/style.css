@@ -1,0 +1,44 @@
+body{
+	 background-image: url(../background/background1.jpg); 
+	 background-size: cover;
+}
+h1{
+	margin-bottom: 20px;
+	opacity: 1;
+}
+.jumbotron{
+	text-align: center;
+	background: #e6e6e6;
+	opacity: 0.8;
+	color: black;
+	height: auto;
+
+}
+.panel-body, .questions{
+	background: #e6e6e6;
+	opacity: 0.8;
+	color: black;
+	padding: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.panel-heading{
+	font-weight: bold;
+
+}
+
+#submit{
+	margin-bottom: 15px
+}
+
+.modal-content{
+	padding: 15px;
+
+}
+.modal-photo{
+	padding-bottom: 5px;
+}
+
+#q-1,#q-2,#q-3,#q-4,#q-5{
+	width: 25%
+}

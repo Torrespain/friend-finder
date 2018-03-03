@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 
 </head>
@@ -40,110 +40,110 @@
 		    </form>
 		</div>
 
-      <h3>Question 1</h3>
-      <h4>Pick a name for our Cohort</h4>                   
-	  
-	  <div>
-	    <select id="q-1">
-	      <option value="default">Choose an option</option>
-		  <option value="1">Slack that code</option>
-		  <option value="2">Learning To Perfect Drowning</option>
-		  <option value="3">Coder's Bay</option>
-		  <option value="4">Farley's Disciples</option>
-		  <option value="5">Code Dreamers</option>
-		</select>
-	  </div>
-	  <br>
+		<div class="questions">
+	      <h3>Question 1</h3>
+	      <h4>Pick a name for our Cohort</h4>                   
+		  
+		  <div class="question">
+		    <select id="q-1">
+		      <option value="default">Choose an option</option>
+			  <option value="1">Slack that code</option>
+			  <option value="2">Learning To Perfect Drowning</option>
+			  <option value="3">Coder's Bay</option>
+			  <option value="4">Farley's Disciples</option>
+			  <option value="5">Code Dreamers</option>
+			</select>
+		  </div>
+		  <br>
 
-	  <h3>Question 2</h3>
-      <h4>Coding and beer is a great combination</h4>    
-	
-	   <div>
-	    <select id="q-2">
-	      <option value="default">Choose an option</option>
-		  <option value="1">1 (Strongly Agree)</option>
-		  <option value="2">2</option>
-		  <option value="3">3</option>
-		  <option value="4">4</option>
-		  <option value="5">5 (Strongly Disagree)</option>
-		</select>
-	  </div>
-	  <br>
+		  <h3>Question 2</h3>
+	      <h4>Coding and beer is a great combination</h4>    
+		
+		   <div class="question">
+		    <select id="q-2">
+		      <option value="default">Choose an option</option>
+			  <option value="1">1 (Strongly Agree)</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5 (Strongly Disagree)</option>
+			</select>
+		  </div>
+		  <br>
 
-	  <h3>Question 3</h3>
-      <h4>Slacking your code is a very bad habit</h4>    
+		  <h3>Question 3</h3>
+	      <h4>Slacking your code is a very bad habit</h4>    
 
-	   <div>
-	    <select id="q-3">
-	      <option value="default">Choose an option</option>
-		  <option value="1">1 (Strongly Agree)</option>
-		  <option value="2">2</option>
-		  <option value="3">3</option>
-		  <option value="4">4</option>
-		  <option value="5">5 (Strongly Disagree)</option>
-		</select>
-	  </div>
-	  <br>
+		   <div class="question">
+		    <select id="q-3">
+		      <option value="default">Choose an option</option>
+			  <option value="1">1 (Strongly Agree)</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5 (Strongly Disagree)</option>
+			</select>
+		  </div>
+		  <br>
 
-	  <h3>Question 4</h3>
-      <h4>Pick your favorite movie</h4>    
+		  <h3>Question 4</h3>
+	      <h4>Pick your favorite movie</h4>    
 
-	   <div>
-	    <select id="q-4">
-	      <option value="default">Choose an option</option>
-		  <option value="1">Inception</option>
-		  <option value="2">Interstellar</option>
-		  <option value="3">Big Fish</option>
-		  <option value="4">Schindler's List</option>
-		  <option value="5">Aladin</option>
-		</select>
-	  </div>
-	  <br>
+		   <div class="question">
+		    <select id="q-4">
+		      <option value="default">Choose an option</option>
+			  <option value="1">Inception</option>
+			  <option value="2">Interstellar</option>
+			  <option value="3">Big Fish</option>
+			  <option value="4">Schindler's List</option>
+			  <option value="5">Aladin</option>
+			</select>
+		  </div>
+		  <br>
 
-	  <h3>Question 5</h3>
-      <h4>I'm going to become a great coder</h4>    
+		  <h3>Question 5</h3>
+	      <h4>I'm going to become a great coder</h4>    
 
-	   <div>
-	    <select id="q-5">
-	      <option value="default">Choose an option</option>
-		  <option value="1">1 (Strongly Agree)</option>
-		  <option value="2">2</option>
-		  <option value="3">3</option>
-		  <option value="4">4</option>
-		  <option value="5">5 (Strongly Disagree)</option>
-		</select>
-	  </div>
-	  <br>
+		   <div class="question">
+		    <select id="q-5">
+		      <option value="default">Choose an option</option>
+			  <option value="1">1 (Strongly Agree)</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5 (Strongly Disagree)</option>
+			</select>
+		  </div>
+	  	<br>
+	 </div>
 
   		<button type="button" id="submit" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg btn-block">Submit</button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Your Match!</h4>
-        </div>
-        <div id="modal-name">
-        </div>
-        <div id="modal-photo">
-        </div>
-        <div id="modal-story">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h2 class="modal-title">Your Match!</h2>
+	        </div>
+	        <div id="modal-name">
+	        </div>
+	        <div id="modal-photo">
+	        </div>
+	        <div id="modal-story">
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 
 	</div>
-	
 
 </body>
 </html>
@@ -192,7 +192,7 @@ function sendData(){
 		picture.attr("src", match.photo);
 		$("#modal-photo").html(picture);
 
-		var taste=$("<p>");
+		var taste=$("<h4>");
 		taste.text(match.taste);
 		$("#modal-story").html(taste);
 	}
